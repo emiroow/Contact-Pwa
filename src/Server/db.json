@@ -1,0 +1,62 @@
+{
+  "Contacts": [
+    {
+      "FullName": "امیر زارعی",
+      "Photo": "https://zarei81.ir/Images/About/amir.jpg",
+      "Mobile": "0914236000",
+      "Email": "Amir_zarei@yahoo.com",
+      "Job": "Programmer",
+      "Group": "2",
+      "id": 1
+    },
+    {
+      "FullName": "امیر زارعی",
+      "Photo": "https://zarei81.ir/Images/About/amir.jpg",
+      "Mobile": "09142369599",
+      "Email": "Amir_zarei@yahoo.com",
+      "Job": "Programmer",
+      "Group": "2",
+      "id": 2
+    },
+    {
+      "FullName": "علی سومبولبانی",
+      "Photo": "https://zarei81.ir/Images/Friends/Ali-Soleimani_e7a0b5da-80b6-4d6b-98e7-58698c0181f6.jpg",
+      "Mobile": "09142369599",
+      "Email": "Ali@yahoo.com",
+      "Job": "Programmer",
+      "Group": "2",
+      "id": 3
+    },
+    {
+      "FullName": "Ali Alizadeh",
+      "Photo": "https://zarei81.ir/Images/Friends/Ali_Alizadeh_5c31aa74-660c-4d33-a7a8-1a86032c1b9c.jpg",
+      "Mobile": "09142369599",
+      "Email": "amir_esmaeelzadeh@yahoo.com",
+      "Job": "Programmer",
+      "Group": "2",
+      "id": 4
+    }
+  ],
+  "Groups": [
+    {
+      "id": "1",
+      "name": "همکار"
+    },
+    {
+      "id": "2",
+      "name": "دوست"
+    },
+    {
+      "id": "3",
+      "name": "فامیل"
+    },
+    {
+      "id": "4",
+      "name": "سرویس"
+    },
+    {
+      "id": "5",
+      "name": "آشنا"
+    }
+  ]
+}

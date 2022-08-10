@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
-import Searchbar from "./Serachbar"
+import {Searchbar} from '../Components/index'
 function Navbar() {
   return (
     <nav className='w-full font-bold text-white shadow-2xl shadow-accentDark/40 p-5 flex justify-evenly  bg-JACARTA'>
