@@ -27,8 +27,8 @@ export const CreatNewContact = (contact) => {
 };
 
 export const UpdateContact = (contactID, contact) => {
-  const Url = `${Endpoint}Contacts/${contactID}`;
-  return axios.put(Url, contact);
+  const url = `${Endpoint}contacts/${contactID}`;
+  return axios.put(url, contact);
 };
 
 export const DeleteContact = (contactID, contact) => {

@@ -6,6 +6,7 @@ import { GetContacts, GetAllGroups, CreatNewContact } from "../src/Service/Conta
 
 function App() {
   const navgate = useNavigate()
+  const [ForseRender, setForseRender]=useState(false)
   const [contacts, Setcontacts] = useState([])
   const [GetGroups, SetGroups] = useState([])
   const [Preloader, setPreloader] = useState(false)
@@ -17,6 +18,7 @@ function App() {
     Job: "",
     Group: "",
   })
+
   useEffect(() => {
     const FetchData = async () => {
       try {
@@ -32,7 +34,7 @@ function App() {
       }
     }
     FetchData()
-  }, [])
+  }, [ForseRender])
 
   const AddNewContactForm = async (e)=>{
     e.preventDefault();
@@ -40,6 +42,7 @@ function App() {
       const {status} = await CreatNewContact(GetNewContact)
       if(status === 201 ){
         SetNewContact({ })
+        setForseRender(!ForseRender)
         navgate('/')
       }
     }catch (err){
@@ -47,6 +50,7 @@ function App() {
     }
   }
 
+  
   const SetContactInfo = (event) => {
     SetNewContact({ ...GetNewContact, [event.target.name]: event.target.value })
   }
@@ -60,7 +64,7 @@ function App() {
         <Route path='/Contacts' element={<Contacts contacts={contacts} loading={Preloader} />} />
         <Route path='/AddContact' element={<AddContact Groups={GetGroups} AddNewContactForm={AddNewContactForm} Loder={Preloader} setcontactinfo={SetContactInfo} getcontactinfo={GetNewContact} />} />
         <Route path='/Contacts/:contactId' element={<ViewContact />} />
-        <Route path='/Contacts/edit/:contactId' element={<EditContact />} />
+        <Route path='/Contacts/edit/:contactId' element={<EditContact setForseRender={setForseRender} ForseRender={ForseRender}/>} />
       </Routes>
     </>
   );

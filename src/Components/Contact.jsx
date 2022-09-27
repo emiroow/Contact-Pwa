@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from '@iconify/react'
+import {Link} from "react-router-dom"
 function Contact({contact}) {
   return (
     <div className=' mt-2 md:mt-7 w-[100%] md:w-[49%] p-2 md:p-4 flex flex-row items-center  relative justify-between bg-slate-900 rounded-xl'>
@@ -29,9 +30,9 @@ function Contact({contact}) {
 
       </div>
       <div className='w-[9.25%] flex flex-col h-full justify-evenly items-center'>
-        <button className=' bg-ORENG p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto-v1:eye-in-speech-bubble"></Icon></button>
-        <button className=' bg-BLUE p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto:pen"></Icon></button>
-        <button className=' bg-RED p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="flat-color-icons:full-trash"></Icon></button>
+        <Link to={"/Contacts/" + contact.id} className=' bg-ORENG p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto-v1:eye-in-speech-bubble"></Icon></Link>
+        <Link to={`/Contacts/edit/${contact.id}`} className=' bg-BLUE p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto:pen"></Icon></Link>
+        <button  className=' bg-RED p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="flat-color-icons:full-trash"></Icon></button>
       </div>
     </div>
   )
