@@ -9,12 +9,13 @@ function EditContact({ setForseRender, ForseRender }) {
     {
       loading: false,
       contact: {
-        fullname: "",
-        photo: "",
-        mobile: "",
-        email: "",
-        job: "",
-        group: "",
+        FullName: "",
+        Photo: "",
+        Mobile: "",
+        Email: "",
+        Job: "",
+        Group: "",
+        id : ""
       },
       groups: [],
     }
@@ -28,10 +29,10 @@ function EditContact({ setForseRender, ForseRender }) {
         const { data: DataAllGroups } = await GetAllGroups()
         SetState({
           ...state,
+          loading: false,
           contact: DataContac,
           groups: DataAllGroups
         })
-        SetState({ ...state, loading: false });
       } catch (error) {
         console.log(error);
         SetState({ ...state, loading: false });
@@ -65,6 +66,7 @@ function EditContact({ setForseRender, ForseRender }) {
   }
 
   const { loading, contact, groups } = state
+  
   return (
     <>
       {loading ? (<Spinner />) :

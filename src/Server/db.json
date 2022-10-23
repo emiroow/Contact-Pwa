@@ -11,27 +11,16 @@
   ],
   "Contacts": [
     {
-      "FullName": "امیر زارعی",
-      "Photo": "https://zarei81.ir/Images/Friends/Ali_Alizadeh_5c31aa74-660c-4d33-a7a8-1a86032c1b9c.jpg",
-      "Mobile": "09142369599",
-      "Email": [
-        "tedst"
-      ],
-      "Job": [
-        "برنامه نویس آهر"
-      ],
-      "Group": "1",
-      "id": 3
-    },
-    {
       "FullName": [
-        "اسپینر"
+        "علی علیزاده"
       ],
       "Photo": "https://zarei81.ir/Images/Friends/Ali_Alizadeh_5c31aa74-660c-4d33-a7a8-1a86032c1b9c.jpg",
       "Mobile": "09142369599",
       "Email": "amir_zarei@yahoo.com",
       "Job": "برنامه نویس",
-      "Group": "1",
+      "Group": [
+        "1"
+      ],
       "id": 4
     },
     {
