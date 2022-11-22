@@ -114,10 +114,9 @@ function EditContact({ setForseRender, ForseRender }) {
                 <p className='font-bold text-[11px] md:text-[15px]'> گروه : </p>
                 <select name="Group" id="Group" onChange={SetContactInfo} className='text-white text-center bg-accentDark w-full h-10 border-2 border-accentLight rounded-md pr-2 font-vazir'>
                   <option value="0">انتخواب گروه جدید</option>
-
                   {
                     groups.map((item) => {
-                      return <option key={item.id} value={item.id}>{item.name}</option>
+                      return <option selected={contact.Group === item.id ? "selected" : null}  key={item.id} value={item.id}>{item.name}</option>
                     })
                   }
                 </select>
