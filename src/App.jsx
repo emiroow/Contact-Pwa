@@ -9,6 +9,8 @@ function App() {
   const [contacts, Setcontacts] = useState([])
   const [GetGroups, SetGroups] = useState([])
   const [Preloader, setPreloader] = useState(false)
+  const [GetQuery, SetQuery] = useState({ text: "" })
+  const [GetFilteredContacts, SetFilteredContacts] = useState([])
   const [GetNewContact, SetNewContact] = useState({
     FullName: "",
     Photo: "",
@@ -26,6 +28,7 @@ function App() {
         const { data: GroupsData } = await GetAllGroups()
         SetGroups(GroupsData)
         Setcontacts(ContactsData)
+        SetFilteredContacts(ContactsData)
         setPreloader(false)
       } catch (err) {
         console.log(err);
@@ -73,15 +76,23 @@ function App() {
     }
   }
 
+  const contactSearch = (event) => {
+    SetQuery({ ...GetQuery, text: event.target.value })
+    const allContacts = contacts.filter((item) => {
+      return item.FullName.toLowerCase().includes(event.target.value.toLowerCase())
+    })
+    SetFilteredContacts(allContacts)
+  }
+
   return (
     <>
-      <Navbar />
+      <Navbar query={GetQuery} search={contactSearch} />
       <SearchOnMobile />
       <Routes>
         <Route path='/' element={<Navigate to="/contacts" />} />
-        <Route path='/Contacts' element={<Contacts contacts={contacts} deletcontact={DeletContacts} loading={Preloader} />} />
+        <Route path='/Contacts' element={<Contacts contacts={GetFilteredContacts} deletcontact={DeletContacts} loading={Preloader} />} />
         <Route path='/AddContact' element={<AddContact Groups={GetGroups} AddNewContactForm={AddNewContactForm} Loder={Preloader} setcontactinfo={SetContactInfo} getcontactinfo={GetNewContact} />} />
-        <Route path='/Contacts/:contactId' element={<ViewContact />} />
+        <Route path='/Contacts/show/:contactId' element={<ViewContact />} />
         <Route path='/Contacts/edit/:contactId' element={<EditContact setForseRender={setForseRender} ForseRender={ForseRender} />} />
       </Routes>
     </>

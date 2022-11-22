@@ -30,7 +30,7 @@ function Contact({ contact, subdeletcontact }) {
 
       </div>
       <div className='w-[9.25%] flex flex-col h-full justify-evenly items-center'>
-        <Link to={"/Contacts/" + contact.id} className=' bg-ORENG p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto-v1:eye-in-speech-bubble"></Icon></Link>
+        <Link to={"/Contacts/show/" + contact.id} className=' bg-ORENG p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto-v1:eye-in-speech-bubble"></Icon></Link>
         <Link to={`/Contacts/edit/${contact.id}`} className=' bg-BLUE p-[7px] md:p-4 rounded-xl' ><Icon className='text-xl md:text-3xl' icon="noto:pen"></Icon></Link>
         <button id={contact.id} onClick={subdeletcontact} className=' bg-RED p-[7px] md:p-4 rounded-xl' >
           <p id={contact.id}>حذف</p>
